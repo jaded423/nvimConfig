@@ -50,11 +50,11 @@ keymap("v", "^<", "^<gv")
 keymap("v", "^>", "^>gv")
 
 -- Dedent and copy utility (for scratch pads)
-keymap("n", "<leader>dp", function()
+keymap("n", "<leader>ep", function()
 	-- Select all and paste from clipboard (replaces everything)
 	vim.cmd('normal! ggVG"+p')
 	-- Select all and dedent (this exits visual mode)
-	vim.cmd('normal! ggVG<')
+	vim.cmd("normal! ggVG<")
 	-- Select all again and yank to clipboard
 	vim.cmd('normal! ggVG"+y')
 end, { desc = "Replace all with dedented clipboard" })
