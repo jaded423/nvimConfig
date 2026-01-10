@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-01-09 - Removed AI plugin integration
+
+Removed the AI plugin integration from the lazy.nvim configuration, which removes the `plugins.ai` module from the plugin setup.
+
 ## November 3, 2025 - Added to Unified Automated Backup System
 
 **Change**: nvim-config added to hourly automated backup alongside Obsidian vault and ZSH config.
