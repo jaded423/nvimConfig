@@ -1,6 +1,10 @@
 # Changelog
 
                                                                                                   ```changelog
+## 2026-01-13 - LSP Completion and Formatting Updates
+
+Updated LSP completion keymap to use 'enter' preset and added Go formatting support with gofmt.
+
 ## 2026-01-13 - Initial commit for nvimConfig
 
 Initial commit of neovim configuration files including plugin setup, keybindings, and basic configuration.
