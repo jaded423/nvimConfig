@@ -1,5 +1,10 @@
 # Changelog
 
+                                                                                                  ```changelog
+## 2026-01-13 - Initial commit for nvimConfig
+
+Initial commit of neovim configuration files including plugin setup, keybindings, and basic configuration.
+
 ## 2026-01-09 - Removed AI plugin integration
 
 Removed the AI plugin integration from the lazy.nvim configuration, which removes the `plugins.ai` module from the plugin setup.
