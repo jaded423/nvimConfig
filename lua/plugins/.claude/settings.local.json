@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gemini:*)",
+      "Bash(mv:*)",
+      "Bash(mkdir:*)",
+      "Bash(launchctl unload:*)",
+      "Bash(launchctl load:*)",
+      "Bash(launchctl list:*)",
+      "Bash(log show:*)",
+      "Bash(bash:*)",
+      "SlashCommand(/compact)",
+      "Bash(ls:*)",
+      "Bash(for file in ~/.claude/commands/*.md)",
+      "Bash(head:*)",
+      "Bash(done)",
+      "Bash(for file in ~/projects/nvim-config/.claude/commands/*.md)",
+      "Bash(cat:*)",
+      "Bash(echo:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
