@@ -16,7 +16,8 @@ __pycache__/
 CLAUDE.md
 AGENTS.md
 GEMINI.md
-.claude/
+.claude/*
+!.claude/sessions/
 backups/
 archive/
 
