@@ -31,7 +31,7 @@ return {
 
 		require("lualine").setup({
 			options = {
-				theme = "tokyonight",
+				theme = "auto",
 				globalstatus = true,
 			},
 			sections = {
