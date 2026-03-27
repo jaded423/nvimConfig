@@ -12,6 +12,9 @@ return {
 			bufdelete = { enabled = true },
 			indent = {
 				enabled = true,
+				filter = function(buf)
+					return vim.bo[buf].filetype ~= "markdown"
+				end,
 				animate = {
 					enabled = vim.fn.has("nvim-0.10") == 1,
 				},
