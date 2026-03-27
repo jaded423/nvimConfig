@@ -15,6 +15,7 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 -- Load core configuration modules
 require("config.options")
 require("config.keymaps")
+require("config.colemak")
 require("config.autocmds")
 
 -- Bootstrap and setup lazy.nvim

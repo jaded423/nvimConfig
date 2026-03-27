@@ -51,6 +51,8 @@ return {
 			{ "-", "<cmd>Oil<CR>", desc = "Open parent directory" },
 			{ "<leader>fj", "<cmd>Oil --float<CR>", desc = "Open parent directory (float)" },
 			{ "<leader>jf", "<cmd>Oil --float<CR>", desc = "Open parent directory (float)" },
+			{ "<leader>tn", "<cmd>Oil --float<CR>", desc = "Open parent directory (float) [Colemak]" },
+			{ "<leader>nt", "<cmd>Oil --float<CR>", desc = "Open parent directory (float) [Colemak]" },
 		},
 		opts = {
 			default_file_explorer = false,
