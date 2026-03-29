@@ -13,7 +13,10 @@ return {
 			indent = {
 				enabled = true,
 				filter = function(buf)
-					return vim.bo[buf].filetype ~= "markdown"
+					return vim.g.snacks_indent ~= false
+						and vim.b[buf].snacks_indent ~= false
+						and vim.bo[buf].buftype == ""
+						and vim.bo[buf].filetype ~= "markdown"
 				end,
 				animate = {
 					enabled = vim.fn.has("nvim-0.10") == 1,
