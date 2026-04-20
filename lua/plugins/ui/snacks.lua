@@ -74,7 +74,7 @@ return {
 						random = 10,
 						pane = 2,
 						indent = 2,
-						height = 40,
+						height = 27,
 					},
 				},
 				preset = {
