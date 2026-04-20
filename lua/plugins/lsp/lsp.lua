@@ -13,8 +13,12 @@ return {
 			},
 		})
 
+		-- Skip auto-install on Android/proot — running npm install for several
+		-- LSPs at once triggers Android OOM-kill. On those devices, install
+		-- manually via :MasonInstall one at a time.
+		local is_android = vim.fn.filereadable("/system/bin/linker64") == 1
 		require("mason-lspconfig").setup({
-			ensure_installed = {
+			ensure_installed = is_android and {} or {
 				"ts_ls",
 				"eslint",
 				"jsonls",
