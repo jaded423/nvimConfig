@@ -2,12 +2,6 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**Multi-AI Documentation Setup**:
-- **CLAUDE.md** is the source of truth - always edit this file
-- **GEMINI.md** and **AGENTS.md** are symlinks to CLAUDE.md
-- When you edit CLAUDE.md, all AI assistants automatically see the changes
-- No manual syncing needed - symlinks handle it automatically!
-
 ## Repository Overview
 
 This is a **personal Neovim configuration** built with Lua, using lazy.nvim for plugin management. The config is symlinked from `~/.config/nvim` to enable seamless editing and version control. Any changes made to `~/.config/nvim` automatically appear here for git tracking.
