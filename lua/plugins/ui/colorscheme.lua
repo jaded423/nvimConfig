@@ -23,4 +23,15 @@ return {
 			})
 		end,
 	},
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		lazy = true,
+		config = function()
+			require("catppuccin").setup({
+				flavour = "macchiato",
+				transparent_background = false,
+			})
+		end,
+	},
 }
