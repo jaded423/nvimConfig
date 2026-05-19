@@ -17,7 +17,7 @@ hi Cursor       guifg=#000000 guibg=#66ff66
 hi Visual                     guibg=#004400              ctermbg=22
 hi Search       guifg=#000000 guibg=#ffcc33 ctermfg=0   ctermbg=214
 hi IncSearch    guifg=#000000 guibg=#a0ffa0 ctermfg=0   ctermbg=156
-hi StatusLine   guifg=#000000 guibg=#33ff33 ctermfg=0   ctermbg=46  cterm=bold
+hi StatusLine   guifg=#1a801a guibg=NONE    ctermfg=28  ctermbg=NONE cterm=bold
 hi StatusLineNC guifg=#1a801a guibg=NONE    ctermfg=28  ctermbg=NONE
 hi VertSplit    guifg=#1a801a guibg=NONE    ctermfg=28  ctermbg=NONE
 hi Pmenu        guifg=#66ff66 guibg=#001100 ctermfg=46  ctermbg=22
