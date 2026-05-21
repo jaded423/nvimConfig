@@ -41,41 +41,4 @@ return {
 		},
 	},
 
-	-- Code outline and symbols
-	{
-		"stevearc/aerial.nvim",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-tree/nvim-web-devicons",
-		},
-		cmd = { "AerialToggle", "AerialOpen", "AerialNavToggle" },
-		keys = {
-			{ "<leader>a", "<cmd>AerialToggle<cr>", desc = "Aerial (Symbols)" },
-			{ "[a", "<cmd>AerialPrev<cr>", desc = "Previous symbol" },
-			{ "]a", "<cmd>AerialNext<cr>", desc = "Next symbol" },
-		},
-		opts = {
-			backends = { "treesitter", "lsp", "markdown", "man" },
-			layout = {
-				min_width = 30,
-				default_direction = "prefer_right",
-			},
-			show_guides = true,
-			filter_kind = {
-				"Class",
-				"Constructor",
-				"Enum",
-				"Function",
-				"Interface",
-				"Module",
-				"Method",
-				"Struct",
-			},
-			-- Automatically open aerial when entering supported buffers
-			on_attach = function(bufnr)
-				vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
-				vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
-			end,
-		},
-	},
 }

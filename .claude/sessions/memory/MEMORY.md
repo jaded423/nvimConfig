@@ -1,0 +1,1 @@
+- [lazy.lua imports must stay in sync with plugin dirs](lazy-imports-sync.md) — adding/removing a whole `lua/plugins/<cat>/` dir requires +/- of its `{ import = "plugins.<cat>" }` line.
