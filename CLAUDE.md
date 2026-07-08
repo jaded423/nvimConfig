@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+> **Stack:** Tier-2 leaf. Parent hub: [unibrain](../unibrain/CLAUDE.md). Router: [global](~/.claude/CLAUDE.md). Leaf → no `wiki/` tree.
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Repository Overview
