@@ -1,3 +1,10 @@
+---
+type: log
+title: Neovim Config Changelog
+tags: [neovim, changelog]
+related: [index]
+---
+
 # Changelog
 
                                                                                                   ```changelog

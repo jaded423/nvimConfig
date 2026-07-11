@@ -1,3 +1,10 @@
+---
+type: reference
+title: Neovim Commands Reference
+tags: [neovim, commands, keybindings, lsp, dap, neotest]
+related: [architecture, workflows, troubleshooting, index]
+---
+
 # Commands Reference
 
 ## Testing Configuration Changes

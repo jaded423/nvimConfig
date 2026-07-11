@@ -1,3 +1,10 @@
+---
+type: reference
+title: Neovim Config Workflows
+tags: [neovim, workflows, plugins, lsp]
+related: [architecture, commands, index]
+---
+
 # Workflows
 
 ## Modifying the Configuration
@@ -91,20 +98,11 @@ nvim
 :messages
 ```
 
-### Committing Changes
+### Saving Changes
 
-```bash
-cd ~/projects/nvimConfig
-git status
-git add .
-git commit -m "feat: Add rust-analyzer LSP support"
-git push
-```
-
-Or use the shell function:
-```bash
-nvimbackup  # Alias for backup-nvim()
-```
+Committing & pushing is handled by the T0 weekly `push-all` sweep (see
+`~/.claude/CLAUDE.md` § Commit / Push Doctrine). Just edit the config and leave
+the tree dirty; subbed machines auto-pull on cron.
 
 ## Common Patterns When Adding Features
 

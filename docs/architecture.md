@@ -1,3 +1,10 @@
+---
+type: concept
+title: Neovim Config Architecture
+tags: [neovim, lua, lazy.nvim, lsp, plugins]
+related: [commands, workflows, troubleshooting, index]
+---
+
 # Architecture
 
 ## Initialization Flow
@@ -222,3 +229,43 @@ This config enforces Unix line endings (LF) via:
 2. Autocommand in `init.lua` for new `.lua` files
 
 Always use LF endings to avoid massive diffs.
+
+## Version Requirements
+
+- Neovim >= 0.9.4 (0.10+ recommended for animations and full feature support)
+- Git (for lazy.nvim)
+- ripgrep (for Telescope grep)
+- Node.js (for some LSP servers and debuggers)
+- Deno (for peek.nvim markdown preview)
+- A Nerd Font (optional but recommended)
+- GitHub Copilot subscription (optional, for AI features)
+
+## External Dependencies
+
+Installed separately (not via Mason):
+
+```bash
+# macOS
+brew install ripgrep fd lazygit deno
+
+# Ubuntu/Debian
+apt install ripgrep fd-find
+# For deno: https://deno.land/manual/getting_started/installation
+```
+
+## When Updating Plugins
+
+1. Check breaking changes: `:Lazy log`
+2. Update: `:Lazy update`
+3. Test config: `:checkhealth`
+4. Commit lock file: `git add lazy-lock.json && git commit -m "chore: Update plugins"`
+
+## Resources
+
+- [Lazy.nvim Docs](https://github.com/folke/lazy.nvim)
+- [Mason Registry](https://mason-registry.dev/)
+- [Neovim Lua Guide](https://neovim.io/doc/user/lua-guide.html)
+- [Config on GitHub](https://github.com/jaded423/nvimConfig)
+- [nvim-dap Docs](https://github.com/mfussenegger/nvim-dap)
+- [neotest Docs](https://github.com/nvim-neotest/neotest)
+- [GitHub Copilot](https://github.com/features/copilot)

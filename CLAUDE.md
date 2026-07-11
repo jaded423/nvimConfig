@@ -6,135 +6,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a **personal Neovim configuration** built with Lua, using lazy.nvim for plugin management. The config is symlinked from `~/.config/nvim` to enable seamless editing and version control. Any changes made to `~/.config/nvim` automatically appear here for git tracking.
+**Personal Neovim configuration** — Lua, `lazy.nvim` for plugin management. Symlinked from `~/.config/nvim` so edits in either location are the same files.
 
-**Symlink relationship**: `~/.config/nvim -> ~/projects/nvimConfig`
+**Symlink**: `~/.config/nvim -> ~/projects/nvimConfig`
 
-## Quick Reference - Documentation Structure
+## Layout
 
-This documentation is organized into focused, specialized files for easy navigation:
+- `init.lua` — entry point (minimal, delegates to `lua/config/`)
+- `lua/config/` — core settings (`options`, `keymaps`, `autocmds`, `lazy`)
+- `lua/plugins/` — plugin specs, organized by category (`ai/`, `coding/`, `debug/`, `editor/`, `git/`, `lsp/`, `navigation/`, `session/`, `testing/`, `tools/`, `ui/`) + `keybindings.lua`
+- `lazy-lock.json` — pinned plugin versions (commit this)
+- `.gitattributes` — enforces LF line endings
 
-- **[docs/commands.md](docs/commands.md)** - All Neovim commands (testing, plugins, LSP, debugging, testing, AI, code quality, tree-sitter)
-- **[docs/architecture.md](docs/architecture.md)** - System design, plugin organization, initialization flow, implementation details for all major features
-- **[docs/workflows.md](docs/workflows.md)** - Step-by-step guides for modifying config, development workflow, common patterns
-- **[docs/troubleshooting.md](docs/troubleshooting.md)** - Solutions for common issues across all subsystems
-- **[docs/changelog.md](docs/changelog.md)** - Complete version history and feature additions
+## Conventions
 
-## Directory Structure
+- Markdown files use camelCase names (e.g. `gitStages.md`).
+- Plugin config files named for the plugin's purpose; group multi-plugin files by category.
+- Always LF line endings (enforced by `.gitattributes` + an `init.lua` autocmd).
 
-```
-nvimConfig/
-├── init.lua                    # Entry point
-├── lua/
-│   ├── config/                 # Core configuration
-│   │   ├── options.lua         # Vim options
-│   │   ├── keymaps.lua         # Global keybindings
-│   │   ├── autocmds.lua        # Autocommands
-│   │   └── lazy.lua            # Plugin manager bootstrap
-│   └── plugins/                # Plugin configurations (organized by category)
-│       ├── ai/
-│       ├── coding/
-│       ├── debug/
-│       ├── editor/
-│       ├── git/
-│       ├── lsp/
-│       ├── navigation/
-│       ├── session/
-│       ├── testing/
-│       ├── tools/
-│       ├── ui/
-│       └── keybindings.lua
-├── docs/                       # Documentation (this structure)
-│   ├── commands.md
-│   ├── architecture.md
-│   ├── workflows.md
-│   ├── troubleshooting.md
-│   └── changelog.md
-├── lazy-lock.json              # Pinned plugin versions (commit this)
-├── .gitignore
-├── .gitattributes              # Enforces LF line endings
-└── CLAUDE.md                   # This file (source of truth)
-```
+Backups are manual (`gitvi` / `nvimbackup` zsh aliases) — see [global CLAUDE.md](~/.claude/CLAUDE.md).
 
-## Version Requirements
+## Documentation
 
-- Neovim >= 0.9.4 (0.10+ recommended for animations and full feature support)
-- Git (for lazy.nvim)
-- ripgrep (for Telescope grep)
-- Node.js (for some LSP servers and debuggers)
-- Deno (for peek.nvim markdown preview)
-- A Nerd Font (optional but recommended)
-- GitHub Copilot subscription (optional, for AI features)
+Detailed docs (typed, linked) — start at the index:
 
-## External Dependencies
-
-These must be installed separately (not via Mason):
-
-```bash
-# macOS
-brew install ripgrep fd lazygit deno
-
-# Ubuntu/Debian
-apt install ripgrep fd-find
-# For deno: https://deno.land/manual/getting_started/installation
-```
-
-## Important Files
-
-- **lazy-lock.json** - Pinned plugin versions (commit this)
-- **.gitignore** - Excludes lazy.nvim data directory
-- **.gitattributes** - Enforces LF line endings
-- **init.lua** - Entry point (minimal, delegates to config/)
-- **lua/config/** - Core Neovim settings
-- **lua/plugins/** - All plugin specifications
-
-## Automated Backups
-
-This repository is automatically backed up **every hour** as part of a unified dotfiles backup system.
-
-**What's backed up:**
-- This nvim-config repository
-- Obsidian Vault
-- ZSH Config (dotfiles-private)
-
-**How to check:**
-```bash
-# View recent backup logs
-tail -f /tmp/git_backup.log
-
-# Manual backup test
-bash ~/scripts/gitBackup.sh
-
-# Check LaunchAgent status
-launchctl list | grep gitbackup
-```
-
-You'll receive an email notification after each hourly backup showing the status of all three repositories.
-
-## Resources
-
-- [Lazy.nvim Docs](https://github.com/folke/lazy.nvim)
-- [Mason Registry](https://mason-registry.dev/)
-- [Neovim Lua Guide](https://neovim.io/doc/user/lua-guide.html)
-- [Config on GitHub](https://github.com/jaded423/nvimConfig)
-- [nvim-dap Docs](https://github.com/mfussenegger/nvim-dap)
-- [neotest Docs](https://github.com/nvim-neotest/neotest)
-- [GitHub Copilot](https://github.com/features/copilot)
-
-## File Naming Conventions
-
-- **Markdown files**: Use camelCase (e.g., `gitStages.md`, `obsidianSetup.md`) instead of hyphens or underscores
-- Plugin configs: Use descriptive names matching the plugin's purpose
-- Multi-plugin files: Group by category (e.g., `editor.lua` for multiple editing plugins)
-- Nested directories: Organize by function (lsp/, ui/, editor/, etc.)
-
-## When Updating Plugins
-
-1. Check breaking changes: `:Lazy log`
-2. Update: `:Lazy update`
-3. Test config: `:checkhealth`
-4. Commit lock file: `git add lazy-lock.json && git commit -m "chore: Update plugins"`
-
----
-
-**Full changelog**: [docs/changelog.md](docs/changelog.md)
+- **[docs/index.md](docs/index.md)** — catalog of all docs
+- [docs/architecture.md](docs/architecture.md) — design, plugin organization, per-feature impl, version requirements + external deps, plugin-update flow
+- [docs/commands.md](docs/commands.md) — all commands + keybindings
+- [docs/workflows.md](docs/workflows.md) — how to modify config (add LSP/formatter/plugin/keybinding)
+- [docs/troubleshooting.md](docs/troubleshooting.md) — fixes per subsystem
+- [docs/changelog.md](docs/changelog.md) — version history

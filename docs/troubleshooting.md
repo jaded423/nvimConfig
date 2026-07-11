@@ -1,3 +1,10 @@
+---
+type: reference
+title: Neovim Troubleshooting
+tags: [neovim, troubleshooting, lsp, plugins]
+related: [architecture, commands, index]
+---
+
 # Troubleshooting
 
 ## Plugins Not Loading
