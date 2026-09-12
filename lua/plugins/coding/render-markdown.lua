@@ -6,8 +6,14 @@ return {
 	ft = { "markdown" },
 	config = function()
 		require("render-markdown").setup({
-			-- Enable rendering in these modes
-			render_modes = { "n", "c", "i" }, -- Added insert mode
+			-- Render in EVERY mode. Listing modes (the old { "n", "c", "i" }) left out operator-pending
+			-- and visual, so pressing `y` or `v` stripped the rendering and Esc put it back — the whole
+			-- buffer flipped between rendered/raw on every yank (2026-09-12). `true` = all modes.
+			render_modes = true,
+
+			-- Keep the cursor line rendered too; the default shows it raw, so j/k pops each line in and out.
+			-- <leader>mr toggles to raw when you actually need to edit the syntax.
+			anti_conceal = { enabled = false },
 
 			-- Start with rendering enabled
 			enabled = true,
